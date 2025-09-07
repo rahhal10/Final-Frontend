@@ -1,0 +1,284 @@
+/* Remove underline from Add New User button and its Link wrapper */
+.admin-user-mgmt-header-row a,
+.admin-user-mgmt-header-row a:visited,
+.admin-user-mgmt-header-row a:active,
+.admin-user-mgmt-header-row a:hover,
+.admin-user-mgmt-header-row a * {
+	text-decoration: none !important;
+}
+
+/* Modern Purple/White Theme for User Management */
+.admin-dashboard-container {
+	display: flex;
+	min-height: 100vh;
+	background: #f7f8fa;
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.admin-user-mgmt-main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 48px 48px 0 48px;
+	background: #feffff;
+}
+
+.admin-user-mgmt-header-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 1400px;
+	margin: 0 auto 32px auto;
+    
+}
+
+.admin-user-mgmt-title {
+	font-size: 2.3rem;
+	font-weight: 800;
+	color: #5b21b6;
+	margin: 0;
+	letter-spacing: 0.5px;
+}
+
+.admin-user-mgmt-add-btn {
+	background: linear-gradient(90deg, #a78bfa 0%, #7c3aed 100%);
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	margin-left: 600px;
+	padding: 10px 22px;
+	font-size: 1.05rem;
+	font-weight: 600;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	transition: background 0.32s cubic-bezier(.4,0,.2,1), box-shadow 0.32s cubic-bezier(.4,0,.2,1), transform 0.22s cubic-bezier(.4,0,.2,1);
+	box-shadow: 0 2px 8px 0 rgba(124,58,237,0.08);
+	outline: none;
+	position: relative;
+	overflow: hidden;
+	text-decoration: none !important;
+	}
+	.admin-user-mgmt-add-btn span,
+	.admin-user-mgmt-add-btn,
+	.admin-user-mgmt-add-btn * {
+		text-decoration: none !important;
+	}
+	.admin-user-mgmt-add-btn span,
+	.admin-user-mgmt-add-btn {
+		text-decoration: none !important;
+	}
+.admin-user-mgmt-add-btn:hover {
+	background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
+	box-shadow: 0 8px 24px 0 rgba(124,58,237,0.18);
+	transform: translateY(-2px) scale(1.045);
+}
+
+.admin-user-mgmt-section {
+	background: #fff;
+	border-radius: 18px;
+	box-shadow: 0 8px 36px 0 rgba(124,58,237,0.13), 0 1.5px 8px 0 rgba(124,58,237,0.06);
+	padding: 40px 36px 32px 36px;
+	width: 100%;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.admin-user-mgmt-section-header {
+	margin-bottom: 18px;
+}
+
+.admin-user-mgmt-section-title {
+	font-size: 1.3rem;
+	font-weight: 700;
+	color: #5b21b6;
+	margin: 0 0 8px 0;
+}
+.admin-user-mgmt-count {
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: #7c3aed;
+	margin-left: 8px;
+}
+
+.admin-user-mgmt-list {
+	width: 100%;
+}
+
+.admin-user-mgmt-list-header,
+.admin-user-mgmt-list-item {
+	display: grid;
+	grid-template-columns: 1.8fr 1.2fr 1fr 0.7fr;
+	align-items: center;
+}
+.admin-user-mgmt-delete-btn {
+	color: #fff;
+	background: linear-gradient(90deg, #a78bfa 0%, #7c3aed 100%);
+	border: none;
+	border-radius: 8px;
+	padding: 6px 18px;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	box-shadow: 0 2px 8px 0 rgba(124,58,237,0.08);
+	transition: background 0.32s cubic-bezier(.4,0,.2,1), box-shadow 0.32s cubic-bezier(.4,0,.2,1), transform 0.22s cubic-bezier(.4,0,.2,1);
+	margin-left: 0;
+	outline: none;
+}
+.admin-user-mgmt-delete-btn:hover {
+	background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
+	box-shadow: 0 8px 24px 0 rgba(124,58,237,0.18);
+	transform: translateY(-2px) scale(1.045);
+}
+
+.admin-user-mgmt-list-header {
+	font-weight: 600;
+	color: #5b21b6;
+	border-bottom: 2px solid #ede9fe;
+	padding-bottom: 12px;
+	margin-bottom: 16px;
+	background: transparent;
+}
+
+.admin-user-mgmt-list-item {
+	font-size: 1.07rem;
+	color: #3a3558;
+	border-bottom: 1.5px solid #ede9fe;
+	padding: 18px 0 18px 0;
+	background: transparent;
+}
+.admin-user-mgmt-list-item:last-child {
+	border-bottom: none;
+}
+
+.admin-user-mgmt-role {
+	font-size: 1rem;
+	font-weight: 600;
+	background: none;
+	border-radius: 0;
+	padding: 0;
+	display: inline-block;
+	color: #5b21b6;
+}
+
+.admin-user-mgmt-page {
+
+	.admin-dashboard-container {
+		display: flex;
+		min-height: 100vh;
+		background: #f8f9fa;
+	}
+
+	.admin-user-mgmt-main {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		padding: 40px 48px 0 48px;
+		background: #f8f9fa;
+	}
+
+	.admin-user-mgmt-header-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 32px;
+	}
+
+	.admin-user-mgmt-title {
+		font-size: 2.2rem;
+		font-weight: 700;
+		color: #333;
+		margin: 0;
+	}
+
+	.admin-user-mgmt-add-btn {
+		background: #7c3aed;
+		color: #fff;
+		border: none;
+		border-radius: 8px;
+		padding: 10px 22px;
+		font-size: 1rem;
+		font-weight: 600;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		transition: background 0.2s;
+	}
+	.admin-user-mgmt-add-btn:hover {
+		background: #5b21b6;
+	}
+
+	.admin-user-mgmt-section {
+		background: #fff;
+		border-radius: 12px;
+		box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+		padding: 32px 40px;
+		width: 100%;
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
+	.admin-user-mgmt-section-header {
+		margin-bottom: 18px;
+	}
+
+	.admin-user-mgmt-section-title {
+		font-size: 1.3rem;
+		font-weight: 600;
+		color: #333;
+		margin: 0;
+	}
+	.admin-user-mgmt-count {
+		font-size: 1.1rem;
+		font-weight: 500;
+		color: #7c3aed;
+		margin-left: 8px;
+	}
+
+	.admin-user-mgmt-list {
+		width: 100%;
+	}
+
+	.admin-user-mgmt-list-header {
+		display: flex;
+		justify-content: space-between;
+		font-weight: 600;
+		color: #555;
+		border-bottom: 2px solid #e0e0e0;
+		padding-bottom: 12px;
+		margin-bottom: 16px;
+	}
+
+	.admin-user-mgmt-list-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 14px 0;
+		border-bottom: 1px solid #ececec;
+		font-size: 1rem;
+		color: #444;
+	}
+	.admin-user-mgmt-list-item:last-child {
+		border-bottom: none;
+	}
+
+	.admin-user-mgmt-role {
+		padding: 4px 14px;
+		border-radius: 16px;
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: #fff;
+		display: inline-block;
+	}
+	.admin-role-admin {
+		background: #7c3aed;
+	}
+	.admin-role-user {
+		background: #38bdf8;
+	}
+	.admin-role-moderator {
+		background: #f59e42;
+	}
+}
