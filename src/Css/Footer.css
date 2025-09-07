@@ -1,0 +1,29 @@
+:root{
+  --ink: #0f1724;
+  --muted: #6b7280;
+  --purple-1: #7c3aed;
+}
+
+.site-footer{ background:#fff; color:var(--muted); padding:40px 16px 28px; }
+.footer-inner{ max-width:1100px; margin:0 auto; }
+.site-footer{ font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif; }
+.footer-grid{ display:grid; grid-template-columns: 1fr repeat(3, minmax(140px, 1fr)); gap:28px; align-items:start; }
+.footer-brand{ text-align:left; }
+.brand-logo{ margin-bottom:8px; }
+.brand-name{ font-weight:800; color:var(--purple-1); margin-bottom:8px; }
+.brand-desc{ margin:0 0 12px 0; color:var(--muted); max-width:320px; }
+.footer-col h4{ margin:0 0 12px 0; color:var(--ink); font-size:0.95rem; }
+.footer-col ul{ list-style:none; padding:0; margin:0; }
+.footer-col li{ margin:8px 0; }
+.footer-col a{ color:var(--muted); text-decoration:none; }
+.footer-divider{ border:none; border-top:1px solid #eee; margin:22px 0; }
+.footer-bottom{ text-align:center; color: #9aa0a6; font-size:0.95rem; }
+
+@media (max-width: 980px){
+  .footer-grid{ grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px){
+  .footer-grid{ grid-template-columns: 1fr; }
+  .brand-desc{ max-width:none; }
+}
