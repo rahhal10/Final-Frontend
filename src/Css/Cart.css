@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+/* Cart page styles (static HTML/CSS)
+	NOTE: avoid defining global :root variables here to prevent overriding
+	site-wide tokens used by other pages (footer, dashboard). */
+
+.cart-page{ --cart-accent: #6b3bd6; --cart-muted: #f4f4f7; --cart-text-muted: #777; padding:40px 24px; background:#f8fafc; min-height:80vh; font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+.cart-container{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 360px; gap:28px }
+
+.cart-list h2{ font-size:22px; margin-bottom:14px }
+
+/* Keep the list area scrollable so many items don't push the summary off-screen */
+.cart-list{
+	max-height: calc(100vh - 180px); /* leaves room for header/summary and page padding */
+	overflow-y: auto;
+	padding-right: 8px; /* prevent content from being hidden under scrollbar */
+	-webkit-overflow-scrolling: touch;
+}
+
+/* custom thin scrollbar for modern browsers */
+.cart-list::-webkit-scrollbar{ width:10px }
+.cart-list::-webkit-scrollbar-thumb{ background:rgba(15,23,42,0.06); border-radius:8px }
+.cart-list::-webkit-scrollbar-track{ background:transparent }
+
+/* Card visual redesign: only these rules changed. Keep colors/variables the same. */
+.cart-item{
+	display:flex;
+	gap:18px;
+	padding:20px;
+	border:1px solid rgba(15,23,42,0.04);
+	border-radius:18px;
+	margin-bottom:18px;
+	align-items:flex-start;
+	background:linear-gradient(180deg,#ffffff 0%, #fbfbfd 100%);
+	box-shadow:0 10px 30px rgba(11,22,60,0.04);
+	position:relative; /* anchor for bottom-right counter */
+}
+.cart-item .thumb{
+	width:120px; height:84px; object-fit:cover; border-radius:12px; background:linear-gradient(135deg,rgba(107,59,214,0.06),rgba(138,92,240,0.04));
+	transition:transform .22s cubic-bezier(.2,.9,.3,1), box-shadow .22s ease;
+	flex-shrink:0;
+}
+
+/* Hover effects for the whole product (visual only) */
+
+.cart-item{ transition:box-shadow .2s ease }
+.cart-item:hover{ box-shadow:0 28px 64px rgba(15,23,42,0.08); z-index:2 }
+.cart-item:hover .thumb{ transform:scale(1.04); box-shadow:0 20px 40px rgba(11,22,60,0.06) }
+.item-main{ width:100%; }
+.cart-item:hover .item-title{ color:var(--cart-accent); text-decoration:none }
+.cart-item:hover .item-actions{ opacity:1 }
+
+/* Make action area more visible on hover */
+.item-actions{ transition:opacity .18s ease, transform .18s ease; opacity:0.98; display:flex; gap:12px; align-items:center }
+.item-actions .remove{ transition:transform .14s ease, box-shadow .14s ease }
+.item-actions .remove:hover{ transform:translateY(-2px) scale(1.02); box-shadow:0 10px 26px rgba(107,59,214,0.08) }
+
+
+.item-main{ display:flex; justify-content:space-between; flex:1; align-items:flex-start }
+.item-meta{ max-width:62%; display:flex; flex-direction:column; gap:4px }
+.item-title{ margin:0; font-size:18px; line-height:1.15; font-weight:800; color:#0b1220 }
+.author{ color:#6b7280; font-size:13px; margin-top:2px; margin-bottom:2px }
+.item-meta .price{ margin:0; padding:0 }
+.item-stats{ color:var(--cart-text-muted); font-size:13px; margin-top:2px }
+.tag{ display:inline-block; background:#f3ecff; color:var(--cart-accent); padding:6px 10px; border-radius:999px; font-size:12px; font-weight:700; width: fit-content; }
+
+
+.price .current{ color:var(--cart-accent); font-weight:900; font-size:1.36rem; letter-spacing:-0.5px }
+.price .original{ color:#a3a3a3; font-size:13px; text-decoration:line-through; margin-left:8px }
+
+/* Ensure the price block is visible in cart items (override other pages that hide .price) */
+.cart-item .price { display: block; }
+.price-amount { color: var(--cart-accent); font-weight: 900; font-size: 1.36rem; }
+
+
+.qty{ display:flex; align-items:center; border:1px solid rgba(15,23,42,0.06); padding:6px; border-radius:10px; background:#fff; z-index:3; transition:transform .14s ease; will-change:transform; position:absolute; right:12px; bottom:12px }
+.qty-btn{ border:none; background:transparent; font-size:18px; padding:6px 10px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center; border-radius:8px }
+.qty-btn:hover{ background:rgba(107,59,214,0.06) }
+.qty-num{ padding:0 12px; min-width:28px; text-align:center; font-weight:800; color:#0b1220 }
+.remove{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:transparent; transition:opacity .16s ease, transform .16s ease, visibility .16s; color:#d24b4b; border:1px solid rgba(210,75,75,0.06); margin-left:8px; opacity:0; visibility:hidden; transform:none; pointer-events:none }
+.remove svg{ width:16px; height:16px }
+.remove:hover{ background:rgba(210,75,75,0.06); transform:scale(1.02); box-shadow:0 6px 14px rgba(0,0,0,0.04) }
+.remove:focus{ outline:3px solid rgba(107,59,214,0.12); outline-offset:2px }
+
+/* show trash only when hovering the item */
+.cart-item:hover .remove{ opacity:1; visibility:visible; transform:none; pointer-events:auto }
+
+/* Make the qty buttons feel clickable (visual only) */
+.qty-btn{ display:inline-flex; align-items:center; justify-content:center; border-radius:8px; padding:6px 10px; transition:transform .12s ease, background .12s ease, box-shadow .12s ease }
+.qty-btn:hover{ background:rgba(15,23,42,0.04); transform:translateY(-2px) }
+.qty-btn:active{ transform:translateY(0) scale(.97); background:rgba(15,23,42,0.06); box-shadow:inset 0 3px 8px rgba(0,0,0,0.06) }
+.qty-btn:focus-visible{ outline:3px solid rgba(107,59,214,0.12); outline-offset:2px }
+
+/* Slight emphasis of the number when pressing either button (modern browsers) */
+.qty:has(button:active) .qty-num{ transform:scale(1.06); color:var(--cart-accent); font-weight:700; transition:transform .12s ease, color .12s ease }
+
+/* Give the whole product a subtle pressed appearance while interacting (no positional shifts) */
+.cart-item{ transition:box-shadow .14s ease, filter .12s ease }
+.cart-item:has(.qty button:active), .cart-item:has(.remove:active){ /* avoid translate so absolutely positioned children stay anchored */ box-shadow:0 6px 20px rgba(0,0,0,0.04) inset; filter:brightness(.995) }
+
+/* Fallback for browsers without :has: style the immediate area -- avoid positional transforms */
+
+@media (prefers-reduced-motion: reduce){
+	.qty-btn, .qty-num, .cart-item, .item-actions { transition: none !important; transform: none !important }
+}
+
+/* Small accessibility-friendly reduction for focus-visible states when hover is not available */
+@media (hover: none) {
+	.cart-item:hover { transform: none; box-shadow: none }
+	.cart-item:focus-within { transform: translateY(-4px); box-shadow:0 18px 36px rgba(15,23,42,0.06) }
+}
+
+.cart-summary{ border:1px solid #f0f0f3; border-radius:10px; padding:20px; background:#fff }
+.cart-summary h3{ margin-top:0 }
+.summary-row{ display:flex; justify-content:space-between; padding:8px 0; color:#333 }
+.summary-row.saving{ color:#2aa952 }
+.summary-total{ display:flex; justify-content:space-between; font-weight:700; margin:10px 0 }
+.total-amt{ color:var(--cart-accent) }
+
+.checkout{ width:100%; background:linear-gradient(90deg,#6b3bd6 0%, #8a5cf0 100%); color:#fff; border:none; padding:12px 16px; border-radius:10px; cursor:pointer; margin-top:10px; display:inline-flex; align-items:center; justify-content:center; gap:10px; font-weight:700; box-shadow:0 6px 18px rgba(107,59,214,0.16); transition:transform .16s ease, box-shadow .16s ease, opacity .12s ease }
+.checkout svg{ width:18px; height:18px; transform:translateX(0); transition:transform .18s ease }
+.checkout:hover{ transform:translateY(-3px); box-shadow:0 12px 36px rgba(107,59,214,0.18) }
+.checkout:active{ transform:translateY(-1px) scale(.995); opacity:.98 }
+.checkout:focus{ outline:3px solid rgba(139,92,240,0.14); outline-offset:3px }
+
+@media (prefers-reduced-motion: reduce){
+	.checkout, .checkout svg { transition: none !important }
+}
+.continue{ width:100%; background:transparent; border:none; color:var(--cart-accent); margin-top:8px; cursor:pointer }
+.guarantee{ margin-top:12px; background:#faf6ff; padding:12px; border-radius:8px; font-size:13px }
+
+@media (max-width:900px){ .cart-container{ grid-template-columns:1fr; padding:0 12px } .cart-summary{ order:2 } }
+
+/* disable the scroll behavior on small screens so the page can flow naturally */
+@media (max-width:900px){
+	.cart-list{ max-height: none; overflow: visible; padding-right:0 }
+}
+
+
+

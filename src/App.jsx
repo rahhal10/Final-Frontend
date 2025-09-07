@@ -7,6 +7,9 @@ import Navbar from './Comp/Navbar'
 import Login from './Routes/Login'
 import Signup from './Routes/Signup'
 import { useState } from 'react'
+import Courses from './Routes/Courses'
+import Cart from './Routes/Cart'
+import Dashboard from './Routes/Dashboard'
 
 function App() {
 
@@ -40,6 +43,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login onLogin={onLogin} />} />
         <Route path="/signup" element={<Signup />} />
+         <Route path="/courses" element={user ? <Courses user={user} /> : <Home />} />
+         <Route path="/cart" element={user ? <Cart user={user} /> : <Home />} />
+         <Route path="/dashboard" element={user  ? <Dashboard user={user} /> : <Home />} />
       </Routes>
       <Footer />
     </Router>
