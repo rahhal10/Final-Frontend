@@ -1,0 +1,111 @@
+/* Admin_Home.css */
+.admin-home-container {
+  min-height: 100vh;
+  background: #f7f8fa;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.admin-home-bg-mesh {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(ellipse 60% 40% at 80% 10%, #a78bfa 0%, transparent 100%),
+    radial-gradient(ellipse 50% 30% at 20% 80%, #7c3aed 0%, transparent 100%),
+    radial-gradient(ellipse 40% 20% at 60% 70%, #ede9fe 0%, transparent 100%),
+    radial-gradient(ellipse 30% 15% at 10% 20%, #c4b5fd 0%, transparent 100%);
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.admin-home-center {
+  text-align: center;
+  padding-top: 60px;
+  position: relative;
+  z-index: 1;
+}
+.admin-home-title-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.admin-home-logo {
+  font-size: 48px;
+  color: #7c3aed;
+  margin-bottom: 10px;
+}
+.admin-home-title {
+  font-weight: bold;
+  color: #5b21b6;
+  font-size: 3rem;
+  margin: 0;
+}
+.admin-home-subtitle {
+  color: #6b7280;
+  font-size: 1.2rem;
+  margin-top: 18px;
+  margin-bottom: 32px;
+}
+.admin-home-btn {
+  background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 48px;
+  box-shadow: 0 2px 8px rgba(124,58,237,0.08);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+.admin-home-btn:hover {
+  background: linear-gradient(90deg, #6d28d9 0%, #7c3aed 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(124,58,237,0.13);
+}
+.admin-home-cards-row {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.admin-home-card {
+  background: #fff;
+  border: 1.5px solid #ede9fe;
+  border-radius: 16px;
+  width: 320px;
+  padding: 36px 24px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(124,58,237,0.04);
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+.admin-home-card:hover {
+  box-shadow: 0 8px 32px rgba(124,58,237,0.10);
+  transform: translateY(-4px) scale(1.03);
+}
+.admin-home-card-icon {
+  background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+  border-radius: 8px;
+  display: inline-block;
+  padding: 8px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.admin-home-card-title {
+  color: #5b21b6;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin: 0 0 10px 0;
+}
+.admin-home-card-desc {
+  color: #6b7280;
+  font-size: 1rem;
+  margin: 0;
+}

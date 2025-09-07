@@ -10,6 +10,8 @@ import { useState } from 'react'
 import Courses from './Routes/Courses'
 import Cart from './Routes/Cart'
 import Dashboard from './Routes/Dashboard'
+import Admin_Home from './Routes/Admin_Home'
+import Admin_Dashboard from './Routes/Admin_Dashboard'
 
 function App() {
 
@@ -46,6 +48,10 @@ function App() {
          <Route path="/courses" element={user ? <Courses user={user} /> : <Home />} />
          <Route path="/cart" element={user ? <Cart user={user} /> : <Home />} />
          <Route path="/dashboard" element={user  ? <Dashboard user={user} /> : <Home />} />
+
+         <Route path="/admin_home" element={<Admin_Home />} />
+         <Route path="/admin_dashboard" element={<Admin_Dashboard user={user} />} />
+
       </Routes>
       <Footer />
     </Router>
