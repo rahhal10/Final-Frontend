@@ -82,6 +82,27 @@
   .about-subtitle{ font-size: 0.95rem; }
 }
 
+@media (max-width: 400px) {
+  .about-hero {
+    padding: 24px 4px 32px;
+  }
+  .about-title {
+    font-size: 1.2rem;
+  }
+  .about-subtitle {
+    font-size: 0.8rem;
+  }
+  .stat-card {
+    padding: 12px 4px;
+  }
+  .mission-heading, .values-heading, .team-heading {
+    font-size: 1.1rem;
+  }
+  .mission-section, .values-section, .team-section {
+    padding: 24px 4px 32px;
+  }
+}
+
 /* Stats grid (sibling section below hero) */
 .about-stats{
   background: #fff;

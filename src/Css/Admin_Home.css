@@ -109,3 +109,45 @@
   font-size: 1rem;
   margin: 0;
 }
+
+/* Responsive styles for mobile */
+@media (max-width: 600px) {
+  .admin-home-center {
+    padding-top: 32px;
+  }
+  .admin-home-title {
+    font-size: 2rem;
+  }
+  .admin-home-subtitle {
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 18px;
+  }
+  .admin-home-btn {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+  .admin-home-cards-row {
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 16px;
+    align-items: center;
+  }
+  .admin-home-card {
+    width: 95vw;
+    min-width: 0;
+    padding: 22px 8px;
+    font-size: 0.98rem;
+  }
+  .admin-home-card-title {
+    font-size: 1.1rem;
+  }
+  .admin-home-card-desc {
+    font-size: 0.95rem;
+  }
+  .admin-home-logo {
+    font-size: 2.2rem;
+  }
+}
+

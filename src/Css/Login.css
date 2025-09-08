@@ -268,3 +268,72 @@ body, .login-container, .login-left, .login-right, .login-form, .login-title, .l
     justify-content: center;
   }
 }
+
+@media (max-width: 600px) {
+  .login-form {
+    max-width: 98vw;
+    padding: 0 2vw;
+  }
+  .login-welcome {
+    font-size: 2rem;
+  }
+  .login-subtitle {
+    font-size: 1rem;
+  }
+  .login-btn {
+    font-size: 1rem;
+    padding: 14px 0;
+    border-radius: 18px;
+  }
+  .login-social-btn {
+    font-size: 0.98rem;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+  .login-right-content {
+    padding: 24px 0;
+  }
+  .login-right-title {
+    font-size: 1.5rem;
+  }
+  .login-right-desc {
+    font-size: 1rem;
+  }
+  .login-right-stats {
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-form {
+    max-width: 100vw;
+    padding: 0 1vw;
+  }
+  .login-welcome {
+    font-size: 1.3rem;
+  }
+  .login-subtitle {
+    font-size: 0.9rem;
+  }
+  .login-btn {
+    font-size: 0.92rem;
+    padding: 10px 0;
+    border-radius: 12px;
+  }
+  .login-social-btn {
+    font-size: 0.9rem;
+    padding: 8px 6px;
+    border-radius: 8px;
+  }
+  .login-right-content {
+    padding: 10px 0;
+  }
+  .login-right-title {
+    font-size: 1.1rem;
+  }
+  .login-right-desc {
+    font-size: 0.85rem;
+  }
+}
