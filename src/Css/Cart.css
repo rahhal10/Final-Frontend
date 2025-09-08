@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
 
-/* Cart page styles (static HTML/CSS)
-	NOTE: avoid defining global :root variables here to prevent overriding
-	site-wide tokens used by other pages (footer, dashboard). */
+/* Cart page styles (static HTML/CSS) */
 
 .cart-page{ --cart-accent: #6b3bd6; --cart-muted: #f4f4f7; --cart-text-muted: #777; padding:40px 24px; background:#f8fafc; min-height:80vh; font-family: Inter, system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
 .cart-container{ max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 360px; gap:28px }
@@ -134,6 +132,60 @@
 /* disable the scroll behavior on small screens so the page can flow naturally */
 @media (max-width:900px){
 	.cart-list{ max-height: none; overflow: visible; padding-right:0 }
+}
+
+@media (max-width: 600px) {
+	.cart-page {
+		padding: 10px 2px;
+	}
+	.cart-container {
+		padding: 0 2px;
+		gap: 10px;
+	}
+	.cart-item {
+		flex-direction: column;
+		gap: 8px;
+		padding: 10px;
+	}
+	.cart-item .thumb {
+		width: 100%;
+		max-width: 220px;
+		height: auto;
+		margin: 0 auto 8px auto;
+	}
+	.item-main {
+		flex-direction: column;
+		gap: 6px;
+	}
+	.item-meta {
+		max-width: 100%;
+	}
+	.cart-summary {
+		padding: 10px;
+	}
+	.checkout {
+		font-size: 1rem;
+		padding: 10px 2px;
+	}
+}
+
+@media (max-width: 400px) {
+	.cart-page {
+		padding: 2px 0;
+	}
+	.cart-item {
+		padding: 4px;
+		border-radius: 10px;
+	}
+	.cart-summary {
+		padding: 4px;
+		border-radius: 8px;
+	}
+	.checkout {
+		font-size: 0.92rem;
+		padding: 8px 0;
+		border-radius: 8px;
+	}
 }
 
 
