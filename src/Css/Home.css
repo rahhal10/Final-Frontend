@@ -1,3 +1,40 @@
+/* Weather Section Styles */
+.weather-section {
+	position: absolute;
+	top: 10px;
+	right: -1200px;
+	z-index: 10;
+	margin: 0;
+	width: auto;
+	display: block;
+}
+.weather-box {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+	padding: 18px 32px;
+	min-width: 180px;
+	text-align: center;
+}
+.weather-title {
+	font-weight: 700;
+	font-size: 18px;
+}
+.weather-temp {
+	font-size: 32px;
+	font-weight: 800;
+}
+.weather-desc {
+	font-size: 16px;
+}
+.weather-icon {
+	width: 48px;
+	height: 48px;
+}
+.weather-loading {
+	font-size: 16px;
+	color: #888;
+}
 @media (max-width: 400px) {
 	.hero-content {
 		padding: 8px 0;

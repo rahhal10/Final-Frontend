@@ -1,9 +1,33 @@
 import React from 'react'
 import '../Css/Home.css'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useState } from 'react'
+import Bootstrap from '../Comp/Bootstrap.jsx'
 
 function Home() {
+
+
+  const [weather, setWeather] = useState(null);
+
+  const getWeather = async () => {
+    try {
+      const res = await fetch("https://api.weatherapi.com/v1/current.json?key=5f38c9a6f489429187533540250809&q=Paris");
+      const data = await res.json();
+      setWeather(data);
+      console.log(data);
+    } catch (err) {
+      console.error('Error fetching weather:', err);
+    }
+  };
+
+  useEffect(() => {
+    getWeather();
+  }, []);
+
+
   return (
+    <>
     <section className="hero">
       <div className="hero-bg" />
       <div className="hero-overlay" />
@@ -26,6 +50,28 @@ function Home() {
           <span>📘 1,200+ Courses</span>
           <span>⭐ 4.9 Rating</span>
         </div>
+
+
+
+
+          <section className="weather-section">
+            <div className="weather-box">
+              {weather ? (
+                <>
+                  <div className="weather-title">Paris Weather</div>
+                  <div className="weather-temp">{weather.current.temp_c}&deg;C</div>
+                  <div className="weather-desc">{weather.current.condition.text}</div>
+                  <img src={weather.current.condition.icon} alt="weather icon" className="weather-icon" />
+                </>
+              ) : (
+                <div className="weather-loading">Loading weather...</div>
+              )}
+            </div>
+          </section>
+
+
+
+    
 
         <div className="hero-actions">
           <Link to="/signup"><button className="hero-btn-primary">Start Learning Now</button></Link>
@@ -82,6 +128,8 @@ function Home() {
         </div>
       </div>
     </section>
+
+    </>
   )
 }
 
