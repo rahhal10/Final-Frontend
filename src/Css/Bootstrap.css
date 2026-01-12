@@ -2,6 +2,26 @@
   background: linear-gradient(120deg, #f5f3ff 0%, #f0f9ff 100%);
 }
 
+.profile-offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.profile-logout-bottom {
+  margin-top: auto;
+}
+
+.profile-offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.profile-logout-bottom {
+  margin-top: auto;
+}
+
 .profile-info {
   background: #fff;
   border-radius: 18px;

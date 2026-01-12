@@ -1,0 +1,245 @@
+.lh-ai-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(180deg, #fbfbff, #ffffff);
+}
+
+.lh-ai-sidebar {
+  padding: 28px 24px;
+  border-right: 1px solid rgba(15, 23, 42, 0.08);
+  background: radial-gradient(
+      600px 400px at top,
+      rgba(124, 58, 237, 0.12),
+      transparent
+    ),
+    #ffffff;
+}
+
+.lh-ai-sidebar h2 {
+  font-size: 22px;
+  margin-bottom: 6px;
+  color: #5b21b6;
+}
+
+.lh-ai-sidebar p {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.lh-ai-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lh-ai-actions button {
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  background: rgba(124, 58, 237, 0.08);
+  color: #5b21b6;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lh-ai-actions button:hover {
+  background: rgba(124, 58, 237, 0.14);
+}
+
+.lh-ai-note {
+  margin-top: 24px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.lh-ai-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.lh-ai-chat {
+  flex: 1;
+  padding: 26px;
+  overflow-y: auto;
+}
+
+.lh-ai-row {
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.lh-ai-row.user {
+  justify-content: flex-end;
+}
+
+.lh-ai-row.assistant {
+  justify-content: flex-start;
+}
+
+.lh-ai-message {
+  max-width: 70%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.45;
+  box-shadow: 0 12px 28px rgba(2, 6, 23, 0.06);
+}
+
+.lh-ai-row.user .lh-ai-message {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+  color: white;
+}
+
+.lh-ai-row.assistant .lh-ai-message {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  color: #0f172a;
+}
+
+.lh-ai-message.typing {
+  color: #7c3aed;
+  font-style: italic;
+}
+
+.lh-ai-input {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  background: #f8fafc;
+}
+
+.lh-ai-input textarea {
+  flex: 1;
+  resize: none;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+}
+
+.lh-ai-input button {
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+}
+
+.lh-ai-input button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.lh-ai-message table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 12px 0;
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.lh-ai-message th {
+  background: #7c3aed;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.lh-ai-message td {
+  padding: 10px;
+  border: 1px solid #dee2e6;
+}
+
+.lh-ai-message tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.lh-ai-message td:first-child {
+  font-weight: 600;
+  background: #ecf0f1;
+}
+
+.lh-ai-prompt-toggle {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.lh-ai-prompt-toggle label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.lh-ai-toggle-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.lh-ai-toggle-buttons button {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.lh-ai-toggle-buttons button:hover {
+  border-color: #7c3aed;
+}
+
+.lh-ai-toggle-buttons button.active {
+  background: #7c3aed;
+  color: white;
+  border-color: #7c3aed;
+}
+
+.lh-ai-input .stop-button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.lh-ai-input .stop-button:hover {
+  background: #dc2626;
+}
+
+.lh-ai-input textarea:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.lh-ai-input button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .lh-ai-message table {
+    font-size: 12px;
+  }
+  
+  .lh-ai-message th,
+  .lh-ai-message td {
+    padding: 6px 8px;
+  }
+}

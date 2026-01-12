@@ -12,15 +12,13 @@ function Bootstrap({ user, onLogout }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const profileInitial = user?.username ? user.username[0].toUpperCase() : 'U';
+  const profileInitial = user?.username
+    ? user.username[0].toUpperCase()
+    : 'U';
 
   return (
     <>
-      <button
-        className="navbar-profile-btn"
-        onClick={handleShow}
-        aria-label="Open profile menu"
-      >
+      <button className="navbar-profile-btn" onClick={handleShow}>
         {profileInitial}
       </button>
 
@@ -28,39 +26,61 @@ function Bootstrap({ user, onLogout }) {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Profile</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-          <div className="profile-info">
-            <div className="profile-avatar">{profileInitial}</div>
-            <div className="profile-username">{user?.username}</div>
-            {user?.role && (
-              <div className="profile-role">{user.role}</div>
+
+        {/* flex column ONLY to push logout down */}
+        <Offcanvas.Body className="profile-offcanvas-body">
+          <div>
+            {/* profile card */}
+            <div className="profile-info">
+              <div className="profile-avatar">{profileInitial}</div>
+              <div className="profile-username">{user?.username}</div>
+              <div className="profile-role">{user?.role}</div>
+            </div>
+
+            {/* buttons keep SAME classes */}
+            {user?.role !== 'admin' && (
+              <div className="profile-actions">
+                <Button
+                  variant="outline-primary"
+                  className="w-100 mb-3"
+                  as={Link}
+                  to="/cart"
+                  onClick={handleClose}
+                >
+                  🛒 View Cart
+                </Button>
+
+                <Button
+                  variant="outline-primary"
+                  className="w-100"
+                  as={Link}
+                  to="/chat"
+                  onClick={handleClose}
+                >
+                  💬 Chatbot
+                </Button>
+              </div>
             )}
           </div>
-          <div className="profile-actions">
-            {user?.role !== 'admin' && (
-              <Button
-                variant="outline-primary"
-                className="w-100 mb-2"
-                as={Link}
-                to="/cart"
-                onClick={handleClose}
-              >
-                View Cart
-              </Button>
-            )}
-            <Link to="/"><Button
+          
+
+          {/* Logout pushed to bottom */}
+          <div className="profile-actions profile-logout-bottom">
+           <Link to="/"><Button
               variant="danger"
               className="w-100"
-              onClick={() => { handleClose(); onLogout && onLogout(); }}
+              onClick={() => {
+                handleClose();
+                onLogout && onLogout();
+              }}
             >
-              Logout
-            </Button>
-          </Link>
-        </div>
-      </Offcanvas.Body>
-    </Offcanvas>
+              🚪 Logout
+            </Button></Link>
+          </div>
+        </Offcanvas.Body>
+      </Offcanvas>
     </>
   );
 }
 
-export default Bootstrap
+export default Bootstrap;

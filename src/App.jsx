@@ -8,6 +8,7 @@ import Footer from './Comp/Footer.jsx'
 import Cart from './Routes/Cart.jsx'
 import Login from './Routes/Login.jsx'
 import Signup from './Routes/Signup.jsx'
+import Ai_Chatbot from './Routes/Ai_Chatbot.jsx'
 import Admin_Home from './Routes/Admin_Home.jsx'
 import Admin_Dashboard from './Routes/Admin_Dashboard.jsx'
 import Admin_CoursesMangment from './Routes/Admin_CoursesMangment.jsx'
@@ -51,6 +52,8 @@ return (
         <Route path="/cart" element={user ? <Cart user={user} /> : <Home />} />
         <Route path="/login" element={<Login onLogin={onLogin} />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/chat" element={<Ai_Chatbot />} />
+        
 
         
         <Route path="/admin_home" element={<Admin_Home />} />
